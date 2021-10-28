@@ -7,6 +7,9 @@
   pointer-events: none;
 }
 
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +38,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Custon css */
+.counter-app {
+  background: #7ccb4b;
+  padding: 14px 0 35px 0;
 }

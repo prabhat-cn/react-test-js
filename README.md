@@ -59,6 +59,28 @@ https://javascript.tutorialink.com/syntaxerror-unexpected-token/
 ## To start server after react build or production app without data-test attribute
 npm install --save-dev babel-plugin-react-remove-properties
 
+## add it to package.json or .babelrc
+"babel": {
+    "env": {
+      "production": {
+        "plugins": [
+          [
+            "react-remove-properties",
+            {
+              "properties": [
+                "data-test"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "presets": [
+      "react-app"
+    ]
+  }
+
+## Next
 npm run eject
 
 ## Start static server
