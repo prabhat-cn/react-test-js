@@ -21,7 +21,7 @@
     "start": "react-scripts start && webpack-dev-server --mode development",
     "delbuild": "rm -rf build",
     "local-build": "react-scripts build",
-    "build": "rm -rf build &&  CI= react-scripts build",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test && jest --watch",
     "eject": "react-scripts eject"
   },
