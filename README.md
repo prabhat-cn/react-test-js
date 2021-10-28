@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Getting Started with Create React App With Test Using Jest and Enzyme
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Mocking CSS Modules#
+You can use an ES6 Proxy to mock CSS Modules:
+## Main Packages
+npm install --save-dev jest@26.6.0 babel-jest@26.6.0 identity-obj-proxy
 
-### `yarn start`
+## Install Enzyme
+## https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+npm install --save-dev enzyme @wojtekmaj/enzyme-adapter-react-17
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## This is useful when using selectors like data-test to run selenium test. Those properties are useless when running the code in production. You can save bandwidth by removing them.
 
-### `yarn test`
+npm i --save-dev babel-plugin-react-remove-properties
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## type in package.json file
+"test": "jest --watch", 
 
-### `yarn build`
+## if there is not .git/hg
+or "jest --watchAll"
+--watch ==> flag
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## to run test
+npm run test
+npm test
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Available Plugins not needed
+npm i --save-dev @babel/plugin-transform-react-jsx
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm i --save-dev babel-plugin-transform-decorators-legacy babel-plugin-transform-export-extensions @babel/core 
 
-### `yarn eject`
+## Helpful link
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://stackoverflow.com/questions/62820035/babel-throwing-support-for-the-experimental-syntax-jsx-isnt-currently-enabled
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://www.npmjs.com/package/babel-jest
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://www.npmjs.com/package/jest-enzyme
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Jest docs
+https://jestjs.io/docs/expect
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Enzyme js docs
+https://enzymejs.github.io/enzyme/docs/api/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Selector type
+https://enzymejs.github.io/enzyme/docs/api/selector.html
 
-### Code Splitting
+## [Solved] SyntaxError: Support for the experimental syntax ‘jsx’ isn’t currently enabled
+https://exerror.com/syntaxerror-support-for-the-experimental-syntax-jsx-isnt-currently-enabled/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+https://javascript.tutorialink.com/syntaxerror-unexpected-token/
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## To start server after react build or production app without data-test attribute
+npm install --save-dev babel-plugin-react-remove-properties
 
-### Making a Progressive Web App
+npm run eject
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Start static server
+npm i -g serve 
+serve -s build
 
-### Advanced Configuration
+## for mac or ubuntu globally install 
+sudo npm i -g serve 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## TDD == Test Driven Development
 
-### `yarn build` fails to minify
+## If any problem to start react in the case testing
+To fix the dependency tree, try following the steps below in the exact order:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  1. Delete package-lock.json (not package.json!) and/or yarn.lock 
+in your project folder.
+  2. Delete node_modules in your project folder.
+  3. Remove "babel-jest" from dependencies and/or devDependencies in the package.json file in your project folder.
+  4. Run npm install or yarn, depending on the package manager you 
+use.
+
+In most cases, this should be enough to fix the problem.
+If this has not helped, there are a few other things you can try:  
+
+  5. If you used npm, install yarn (http://yarnpkg.com/) and repeat the above steps with it instead.
+     This may help because npm has known issues with package hoisting which may get resolved in future versions.
+
+  6. Check if E:\Office-Work\CN\Training\REACT-TYPESCRIPT\React-Test\react-test\node_modules\babel-jest is outside your project directory.
+     For example, you might have accidentally installed something in your home folder.
+
+  7. Try running npm ls babel-jest in your project folder.
+     This will tell you which other package (apart from the expected react-scripts) installed babel-jest.
+
+If nothing else helps, add SKIP_PREFLIGHT_CHECK=true to an .env file in your project.
+That would permanently disable this preflight check in case you want to proceed anyway.
+
+P.S. We know this message is long but please read the steps above :-) We hope you find them helpful!
+
+
