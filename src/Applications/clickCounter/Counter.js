@@ -7,6 +7,9 @@ export const Counter = () => {
   const decrement = () => {
     if (count <= 0) {
       setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 1000);
       setCount(0);
     } else {
       setCount(count - 1);
@@ -25,7 +28,13 @@ export const Counter = () => {
           </span>
         )}
       </p>
-      <button data-test="increment-button" onClick={() => setCount(count + 1)}>
+      <button
+        data-test="increment-button"
+        onClick={() => {
+          setError(false);
+          setCount(count + 1);
+        }}
+      >
         Increment Counter
       </button>
       &nbsp; &nbsp; &nbsp;
