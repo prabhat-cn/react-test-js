@@ -7,10 +7,14 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
-  // transform: {
-  //   '\\.[jt]sx?$': 'babel-jest',
-  //   '\\.css$': 'custom-transformer',
-  // },
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+    '\\.css$': 'custom-transformer',
+  },
+  verbose: true,
+  // coverageReporters: ['jest-junit'],
+  // testResultsProcessor: 'jest-junit',
+  // testResultsProcessor: './node_modules/jest-junit',
   // transform: {
   //   '\\.js$': 'babel-jest',
   //   '\\.css$': 'custom-transformer',

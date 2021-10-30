@@ -1,20 +1,22 @@
 # Getting Started with Create React App With Test Using Jest and Enzyme
 
-
+## Configuring Jest
+https://jestjs.io/docs/configuration
+https://jest-bot.github.io/jest/docs/configuration.html
 
 ## Mocking CSS Modules#
 You can use an ES6 Proxy to mock CSS Modules:
 ## Main Packages
-npm install --save-dev jest@26.6.0 babel-jest@26.6.0 identity-obj-proxy
+--> npm install --save-dev jest@26.6.0 babel-jest@26.6.0 identity-obj-proxy
 
 ## Install Enzyme
 ## https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17
 
-npm install --save-dev enzyme @wojtekmaj/enzyme-adapter-react-17
+--> npm install --save-dev enzyme @wojtekmaj/enzyme-adapter-react-17
 
 ## This is useful when using selectors like data-test to run selenium test. Those properties are useless when running the code in production. You can save bandwidth by removing them.
 
-npm i --save-dev babel-plugin-react-remove-properties
+--> npm i --save-dev babel-plugin-react-remove-properties
 
 ## type in package.json file
 "test": "jest --watch", 
@@ -24,13 +26,13 @@ or "jest --watchAll"
 --watch ==> flag
 
 ## to run test
-npm run test
-npm test
+--> npm run test
+--> npm test
 
 ## Available Plugins not needed
-npm i --save-dev @babel/plugin-transform-react-jsx
+--> npm i --save-dev @babel/plugin-transform-react-jsx
 
-npm i --save-dev babel-plugin-transform-decorators-legacy babel-plugin-transform-export-extensions @babel/core 
+--> npm i --save-dev babel-plugin-transform-decorators-legacy  babel-plugin-transform-export-extensions @babel/core 
 
 ## Helpful link
 
@@ -81,14 +83,14 @@ npm install --save-dev babel-plugin-react-remove-properties
   }
 
 ## Next
-npm run eject
+--> npm run eject
 
 ## Start static server
-npm i -g serve 
-serve -s build
+--> npm i -g serve 
+--> serve -s build
 
 ## for mac or ubuntu globally install 
-sudo npm i -g serve 
+--> sudo npm i -g serve 
 
 
 
@@ -121,4 +123,25 @@ That would permanently disable this preflight check in case you want to proceed 
 
 P.S. We know this message is long but please read the steps above :-) We hope you find them helpful!
 
+
+https://lifesaver.codes/answer/allow-configuring-reporters-for-jest
+
+
+## How To Use a Test Reporter With Create React App
+https://codeburst.io/how-to-use-a-test-reporter-with-create-react-app-6c779f71f62
+
+
+# prop-types 
+Runtime type checking for React props and similar objects.
+
+You can use prop-types to document the intended types of properties passed to components. React (and potentially other libraries—see the checkPropTypes() reference below) will check props passed to your components against those definitions, and warn in development if they don’t match.
+
+--> npm install --save prop-types
+
+# check-prop-types
+Manually check PropTypes-compatible proptypes, returning any errors instead of logging them to console.error.
+
+This function is more suitable for checking propTypes in unit tests than mocking console.error, avoiding some serious problems with that approach.
+
+--> npm install --save-dev check-prop-types
 
