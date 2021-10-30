@@ -27,7 +27,10 @@
     "test": "react-scripts test && jest --watch",
     "test:ci": "npm run test -- --testResultsProcessor=\"jest-junit\"",
     "test:cci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "git:st": "git status",
+    "git:a": "git add .",
+    "git:p": "git push"
   },
   "eslintConfig": {
     "extends": [

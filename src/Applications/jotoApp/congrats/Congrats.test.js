@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Congrats from './Congrats';
-import { checkProps, findByTestAttr } from '../../test/testUtils';
-import '../../setupTests';
+import { checkProps, findByTestAttr } from '../../../test/testUtils';
+import '../../../setupTests';
 
 /**
  * Functional react component for congratulatory message.
