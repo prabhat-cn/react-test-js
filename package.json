@@ -2,6 +2,7 @@
   "name": "react-test-js",
   "developer": "Prabhat",
   "udemy-git": "https://github.com/bonnie/udemy-ENZYME.git",
+  "joto-udemy-git": "",
   "jest": "https://jestjs.io/docs/expect",
   "enzyme": "https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/simulate.html",
   "personal-git": "https://github.com/prabhat-cn/react-test-js.git",
