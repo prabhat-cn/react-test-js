@@ -1,5 +1,4 @@
 import React from 'react';
-import checkPropTypes from 'check-prop-types';
 import Enzyme, { shallow, mount } from 'enzyme';
 import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Congrats from './Congrats';
