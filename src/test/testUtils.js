@@ -8,6 +8,7 @@
 
 import checkPropTypes from 'check-prop-types';
 
+// test attribute read
 export const findByTestAttr = (wrapper, val) => {
   return wrapper.find(`[data-test='${val}']`);
 };

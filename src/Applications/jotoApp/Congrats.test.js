@@ -1,9 +1,8 @@
 import React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
-import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { shallow, mount } from 'enzyme';
 import Congrats from './Congrats';
 import { checkProps, findByTestAttr } from '../../test/testUtils';
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+import '../../setupTests';
 
 /**
  * Functional react component for congratulatory message.
