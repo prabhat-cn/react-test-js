@@ -13,9 +13,10 @@ function App() {
       <h1>Jotto Guess Game</h1>
       {/* pass props value depends on test */}
       <Congrats success={false} />
-      <GuessedWords
+      {/* <GuessedWords
         guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
-      />
+      /> */}
+      <GuessedWords guessedWords={[]} />
     </div>
   );
 }
