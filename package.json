@@ -1,6 +1,7 @@
 {
   "name": "react-test-js",
   "developer": "Prabhat",
+  "netlify": "",
   "jest-bot": "https://jest-bot.github.io/jest/docs/configuration.html",
   "udemy-git": "https://github.com/bonnie/udemy-ENZYME.git",
   "jest-link": "https://jestjs.io/docs/expect",
@@ -23,7 +24,7 @@
     "start": "react-scripts start && webpack-dev-server --mode development",
     "delbuild": "rm -rf build",
     "local-build": "react-scripts build",
-    "build": "CI= react-scripts build",
+    "build": "CI= react-scripts build && babel src -d lib",
     "test": "react-scripts test && jest --watch",
     "test:ci": "npm run test -- --testResultsProcessor=\"jest-junit\"",
     "test:cci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false",

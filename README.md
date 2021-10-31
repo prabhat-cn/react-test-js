@@ -145,3 +145,8 @@ This function is more suitable for checking propTypes in unit tests than mocking
 
 --> npm install --save-dev check-prop-types
 
+## Netlify build failed
+https://classic.yarnpkg.com/en/docs/cli/run
+
+
+
