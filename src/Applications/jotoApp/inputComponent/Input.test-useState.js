@@ -4,6 +4,15 @@ import Input from './Input';
 import { checkProps, findByTestAttr } from '../../../test/testUtils';
 import '../../../setupTests';
 
+// globalscope
+
+// mock entire module for destructuring useState on import /////
+const mockSetCurrentGuess = jest.fn();
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useState: (initialState) => [initialState, mockSetCurrentGuess],
+}));
+
 const setup = (secretWord = 'party') => {
   return shallow(<Input secretWord={secretWord} />);
 };
@@ -21,14 +30,6 @@ test('does not throw warning with expected props', () => {
 
 describe('state control input field', () => {
   test('state updates with value of input box upon change', () => {
-    // for useState
-    const mockSetCurrentGuess = jest.fn();
-
-    // by mock "React.useState"
-    React.useState = () => ['', mockSetCurrentGuess];
-    // same
-    // React.useState = jest.fn(() => ['', mockSetCurrentGuess]);
-
     const wrapper = setup();
     const inputBox = findByTestAttr(wrapper, 'input-box');
     // change the event in input box guess train
