@@ -17,7 +17,7 @@ function App() {
       <br />
       <h1>Jotto Guess Game</h1>
       {/* pass props value depends on test */}
-      <Congrats success={false} />\
+      <Congrats success={false} />
       <Input success={success} secretWord={secretWord} />
       {/* <GuessedWords
         guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
