@@ -2,8 +2,13 @@ import './App.css';
 import { Counter } from './Applications/clickCounter/Counter';
 import Congrats from './Applications/jotoApp/congrats/Congrats';
 import GuessedWords from './Applications/jotoApp/guessedWords/GuessedWords';
+import Input from './Applications/jotoApp/inputComponent/Input';
 
 function App() {
+  // get props from shared state
+  const success = false;
+  const secretWord = 'party';
+  const guessedWords = [];
   return (
     <div className="App" data-test="component-app">
       <h1 className="app-head">React Testing!!</h1>
@@ -12,7 +17,8 @@ function App() {
       <br />
       <h1>Jotto Guess Game</h1>
       {/* pass props value depends on test */}
-      <Congrats success={false} />
+      <Congrats success={false} />\
+      <Input success={success} secretWord={secretWord} />
       {/* <GuessedWords
         guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
       /> */}

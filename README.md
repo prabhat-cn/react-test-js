@@ -149,4 +149,7 @@ This function is more suitable for checking propTypes in unit tests than mocking
 https://classic.yarnpkg.com/en/docs/cli/run
 
 
+## .only, .skip, .todo
+describe.only, describe.skip, test.todo('pass only description')
+
 

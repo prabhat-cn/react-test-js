@@ -57,3 +57,45 @@ describe('if there are words guessed', () => {
     expect(guessedWordsNodes.length).toBe(guessedWords.length);
   });
 });
+
+// describe('no words guessed', () => {
+//   let wrapper;
+//   beforeEach(() => {
+//     wrapper = setup({
+//       secretWord: 'party',
+//       success: false,
+//       guessedWords: [],
+//     });
+//   });
+//   test('creates guessedWords table with one row', () => {
+//     const guessedWordRows = findByTestAttr(wrapper, 'guessed-word');
+//     expect(guessedWordRows).toHaveLength(1);
+//   });
+// });
+
+// describe('some word being guessed', () => {
+//   let wrapper;
+//   beforeEach(() => {
+//     wrapper = setup({
+//       secretWord: 'party',
+//       success: false,
+//       guessedWords: [{ guessedWord: 'agile', letterMatchCount: 1 }],
+//     });
+//   });
+
+//   test('adds row to the guessedWords table', () => {
+//     const guessedWordNods = findByTestAttr(wrapper, 'guessed-word');
+//     expect(guessedWordNods).toHaveLength(2);
+//   });
+// });
+
+// describe('guessed the secret word', () => {
+//   let wrapper;
+//   beforeEach(() => {
+//     wrapper = setup({
+//       secretWord: 'party',
+//       success: false,
+//       guessedWords: [{ guessedWord: 'agile', letterMatchCount: 1 }],
+//     });
+
+//   });});
