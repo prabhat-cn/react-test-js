@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Input = (props) => {
+import PropTypes from 'prop-types';
+
+const Input = ({ secretWord }) => {
   return (
     <div data-test="component-input">
       <h1>Input</h1>
     </div>
   );
+};
+Input.propTypes = {
+  secretWord: PropTypes.string.isRequired,
 };
 
 export default Input;
