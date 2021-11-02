@@ -3,12 +3,18 @@ import { Counter } from './Applications/clickCounter/Counter';
 import Congrats from './Applications/jotoApp/congrats/Congrats';
 import GuessedWords from './Applications/jotoApp/guessedWords/GuessedWords';
 import Input from './Applications/jotoApp/inputComponent/Input';
+import { getSecretWord } from './actions';
+import { useEffect } from 'react';
 
 function App() {
   // get props from shared state
   const success = false;
   const secretWord = 'party';
   const guessedWords = [];
+
+  useEffect(() => {
+    getSecretWord();
+  }, []);
   return (
     <div className="App" data-test="component-app">
       <h1 className="app-head">React Testing!!</h1>
