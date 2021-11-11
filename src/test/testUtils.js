@@ -9,12 +9,19 @@
 import checkPropTypes from 'check-prop-types';
 
 // for redux ops start global
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { middlewares } from '../reducers/configureStore';
 
 import rootReducer from '../reducers';
 
 export const storeFactory = (initialState) => {
-  return createStore(rootReducer, initialState);
+  // return createStore(rootReducer, initialState);
+  // after using thunk
+  return createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(...middlewares)
+  );
 };
 
 // store ops global end
