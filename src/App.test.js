@@ -39,6 +39,7 @@ describe('get secret word', () => {
   });
   test('getSecretWord on app mount', async () => {
     const wrapper = setup();
+    // how many times mock will be called
     expect(mockGetSecretWord).toHaveBeenCalledTimes(1);
   });
 
