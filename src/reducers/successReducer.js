@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /**
  * @function successReducer
  * @param {boolean} state - previous state.
@@ -5,6 +6,15 @@
  * @returns {boolean} - new success state.
  */
 
-export default (state, action) => {
-  return null;
+import { actionTypes } from '../actions';
+
+export default (state = false, action) => {
+  //  get in test 'null'
+  // return null;
+  switch (action.type) {
+    case actionTypes.CURRECT_GUESS:
+      return true;
+    default:
+      return state;
+  }
 };
