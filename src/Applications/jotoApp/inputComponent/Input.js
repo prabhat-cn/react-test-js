@@ -1,10 +1,12 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const Input = ({ success, secretWord }) => {
+// const Input = ({ success, secretWord }) => {
+const Input = ({ secretWord }) => {
   // by mock "React.useState"
   const [currentGuess, setCurrentGuess] = React.useState('');
+  const { success } = useSelector((state) => state.success);
   // for testing
   if (success) {
     return <div data-test="component-input" />;

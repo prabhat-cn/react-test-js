@@ -1,6 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
-import { findByTestAttr, checkProps } from './test/testUtils';
+// use redux
+import { findByTestAttr, checkProps, storeFactory } from './test/testUtils';
 import './setupTests';
 import App from './App';
 import { getSecretWord as mockGetSecretWord } from './actions';
@@ -18,7 +20,14 @@ const setup = () => {
 
   // use mount, because useEffect not called on shallow
   // https://github.com/airbnb/enzyme/issues/2086
-  return mount(<App />);
+  // return mount(<App />);
+  // if use reducer
+  const store = storeFactory();
+  return mount(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 };
 
 // Anonymus function
