@@ -1,5 +1,15 @@
 import moxios from 'moxios';
-import { getSecretWord } from '.';
+import { getSecretWord, currectGuess, actionTypes } from '.';
+
+describe('currectGuess', () => {
+  test('returns an action with type `CURRECT_GUESS', () => {
+    const action = currectGuess();
+    // initially provides empty object
+    // expect(action).toBe({});
+    // to remove this error(Received: serializes to the same string)
+    expect(action).toStrictEqual({ type: actionTypes.CURRECT_GUESS });
+  });
+});
 
 describe('getSecretWord', () => {
   beforeEach(() => {
