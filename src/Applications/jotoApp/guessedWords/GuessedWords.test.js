@@ -1,7 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
 import GuessedWords from './GuessedWords';
-import { checkProps, findByTestAttr } from '../../../test/testUtils';
+import {
+  checkProps,
+  findByTestAttr,
+  storeFactory,
+} from '../../../test/testUtils';
 import '../../../setupTests';
 
 const defaultProps = {
